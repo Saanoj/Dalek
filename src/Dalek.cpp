@@ -1,6 +1,7 @@
 #include "Dalek.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 Dalek::Dalek()
 {
     longueur = 1;
@@ -101,18 +102,5 @@ Dalek::Update(){
     glutPostRedisplay();
 }
 Dalek::Saut(){
-    int i;
-    for(i = 0;i<3;i++){
-        extend +=0.2;
-        exte +=0.2;
-        glutPostRedisplay();
-        Sleep(1);
 
-    }
-    for(i = 0;i<3;i++){
-        extend -=0.2;
-        exte -=0.2;
-        glutPostRedisplay();
-        Sleep(1);
-    }
 }

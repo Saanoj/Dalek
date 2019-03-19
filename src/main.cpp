@@ -21,8 +21,15 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include <math.h>
+#include <unistd.h>
 
+#include <time.h>
 
+void sleep(unsigned int mseconds)
+{
+    clock_t goal = mseconds + clock();
+    while (goal > clock());
+}
 
 float angle = 0.0;
 float angle2 = -0.5;
@@ -53,6 +60,7 @@ void initRendering() {
 
 	/* Activation des couleurs */
 	glEnable(GL_COLOR_MATERIAL);
+
 
 	/* définit la couleur d'effacement et la couleur de fond */
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -156,11 +164,12 @@ void KeyboardDown(unsigned char key, int xx, int yy)
     case 't':
         dalek->extend +=0.2;
         dalek->exte +=0.2;
-        glutPostRedisplay();
+
         if(dalek->extend>0.6||dalek->exte>0.6){
             dalek->extend -=0.2;
             dalek->exte -=0.2;
         }
+        glutPostRedisplay();
         break;
     case 'g':
         dalek->extend -=0.2;
@@ -171,10 +180,25 @@ void KeyboardDown(unsigned char key, int xx, int yy)
         }
         glutPostRedisplay();
         break;
-        case ' ':
-            dalek->Saut();
+    case ' ':
+       int i;
+        for(i = 0;i<3;i++){
+            dalek->extend +=0.1;
+            dalek->exte +=0.1;
             glutPostRedisplay();
-            break;
+            printf("%f\n",dalek->exte);
+            sleep(100);
+
+        }
+        for(i = 0;i<3;i++){
+            dalek->extend -=0.1;
+            dalek->exte -=0.1;
+            printf("%f\n",dalek->exte);
+            glutPostRedisplay();
+            sleep(300);
+        }
+    glutPostRedisplay();
+    break;
 
     }
 }
@@ -202,6 +226,26 @@ void KeyboardUp(unsigned char key, int xx, int yy)
     case 'h':
         dalek->bras = 0;
         break;
+     case ' ':
+       int i;
+        for(i = 0;i<3;i++){
+            dalek->extend +=0.1;
+            dalek->exte +=0.1;
+            glutPostRedisplay();
+            printf("%f\n",dalek->exte);
+            sleep(100);
+
+        }
+        for(i = 0;i<3;i++){
+            dalek->extend -=0.1;
+            dalek->exte -=0.1;
+            printf("%f\n",dalek->exte);
+            glutPostRedisplay();
+            sleep(300);
+        }
+    glutPostRedisplay();
+    break;
+
     }
 }
 void SpecialDown(int key, int xx, int yy)
@@ -264,7 +308,7 @@ void mouseButton(int button, int state, int x, int y)
 /** GESTION DEPLACEMENT CAMERA **/
 void computePos(int inutile)
 {
-    dalek ->Update();
+    dalek->Update();
     cam->updatePos();
     glutTimerFunc(10, computePos, 0);
 }

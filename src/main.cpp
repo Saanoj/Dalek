@@ -23,13 +23,9 @@
 #include <math.h>
 #include <unistd.h>
 
-#include <time.h>
 
-void sleep(unsigned int mseconds)
-{
-    clock_t goal = mseconds + clock();
-    while (goal > clock());
-}
+
+
 
 float angle = 0.0;
 float angle2 = -0.5;
@@ -181,24 +177,8 @@ void KeyboardDown(unsigned char key, int xx, int yy)
         glutPostRedisplay();
         break;
     case ' ':
-       int i;
-        for(i = 0;i<3;i++){
-            dalek->extend +=0.1;
-            dalek->exte +=0.1;
-            glutPostRedisplay();
-            printf("%f\n",dalek->exte);
-            sleep(100);
-
-        }
-        for(i = 0;i<3;i++){
-            dalek->extend -=0.1;
-            dalek->exte -=0.1;
-            printf("%f\n",dalek->exte);
-            glutPostRedisplay();
-            sleep(300);
-        }
-    glutPostRedisplay();
-    break;
+        dalek->Saut();
+        break;
 
     }
 }
@@ -227,23 +207,7 @@ void KeyboardUp(unsigned char key, int xx, int yy)
         dalek->bras = 0;
         break;
      case ' ':
-       int i;
-        for(i = 0;i<3;i++){
-            dalek->extend +=0.1;
-            dalek->exte +=0.1;
-            glutPostRedisplay();
-            printf("%f\n",dalek->exte);
-            sleep(100);
-
-        }
-        for(i = 0;i<3;i++){
-            dalek->extend -=0.1;
-            dalek->exte -=0.1;
-            printf("%f\n",dalek->exte);
-            glutPostRedisplay();
-            sleep(300);
-        }
-    glutPostRedisplay();
+       dalek->Saut();
     break;
 
     }

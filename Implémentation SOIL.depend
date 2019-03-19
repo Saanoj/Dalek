@@ -318,12 +318,12 @@
 	"SOIL.h"
 	"Camera.h"
 
-1552404552 c:\users\jonas\onedrive\documents\dalek\include\dalek.h
+1553000826 c:\users\jonas\onedrive\documents\dalek\include\dalek.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 
-1552407245 source:c:\users\jonas\onedrive\documents\dalek\src\main.cpp
+1553000909 source:c:\users\jonas\onedrive\documents\dalek\src\main.cpp
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -339,10 +339,10 @@
 	<stdio.h>
 	<math.h>
 	<unistd.h>
-	<time.h>
 
-1552406047 source:c:\users\jonas\onedrive\documents\dalek\src\dalek.cpp
+1553000863 source:c:\users\jonas\onedrive\documents\dalek\src\dalek.cpp
 	"Dalek.h"
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 

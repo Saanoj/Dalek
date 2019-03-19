@@ -13,6 +13,8 @@ class Dalek
         Draw();
         Update();
         Saut();
+        Up();
+        Down();
         float longueur;
         float longueur2;
         float angle;

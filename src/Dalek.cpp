@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <time.h>
+void sleep(unsigned int mseconds)
+{
+    clock_t goal = mseconds + clock();
+    while (goal > clock());
+}
 Dalek::Dalek()
 {
     longueur = 1;
@@ -102,5 +108,27 @@ Dalek::Update(){
     glutPostRedisplay();
 }
 Dalek::Saut(){
+    int i;
+        for(i = 0;i<3;i++){
+            Up();
+        }
+        for(i = 0;i<3;i++){
+            Down();
+        }
+    glutPostRedisplay();
+}
+Dalek::Up(){
+    extend +=0.1;
+    exte +=0.1;
+    glutPostRedisplay();
+    printf("%f\n",exte);
+    sleep(10);
+}
 
+Dalek::Down(){
+    extend -=0.1;
+    exte -=0.1;
+    printf("%f\n",exte);
+    glutPostRedisplay();
+    sleep(10);
 }

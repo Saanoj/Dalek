@@ -27,6 +27,7 @@ class Block
         Block();
         Block(float x, float y, float z);
         void Draw();
+        void DrawBras();
         void SetTexture(int face, GLuint texture);
 
         float posx;

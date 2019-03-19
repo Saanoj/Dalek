@@ -53,19 +53,23 @@ Dalek::Draw()
         glPushMatrix();
             glRotatef(brasangle,0,1,0);
             glPushMatrix();
-                glTranslatef(0,exte*10,0);
+                glTranslatef(-0.5,exte*10,0);
                 glTranslatef(longueur2,1.5,0.5);
                 glScalef(longueur,0.1,0.1);
-                glutSolidCube(2);
+                //glutSolidCube(2);
+                Block *brasG = new Block(1.0f, 2.0f, 2.0f);
+                brasG->DrawBras();
             glPopMatrix();
         glPopMatrix();
-    /**bras droit**/
+        /**bras droit**/
         glPushMatrix();
-            glTranslatef(0,exte*10,0);
+            glTranslatef(-0.5,exte*10,0);
             glTranslatef(1,1.5,-0.5);
             glScalef(0.5,0.1,0.1);
-            glutSolidCube(2);
+            Block *brasD = new Block(1.0f, 2.0f, 2.0f);
+            brasD->DrawBras();
         glPopMatrix();
+
 
         glPushMatrix();
             glTranslatef(0,exte*10,0);

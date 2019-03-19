@@ -24,6 +24,10 @@ class Dalek
         float bras;
         float extend;
         float exte;
+        // Deplacement du dalek
+        float moveDalek;
+        float moveForward;
+        float moveSide;
         int jmp;
         int shoot;
     protected:

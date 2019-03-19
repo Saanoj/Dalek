@@ -24,7 +24,7 @@ class Dalek
         float bras;
         float extend;
         float exte;
-
+        int jmp;
     protected:
 
     private:

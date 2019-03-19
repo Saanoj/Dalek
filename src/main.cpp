@@ -177,7 +177,7 @@ void KeyboardDown(unsigned char key, int xx, int yy)
         glutPostRedisplay();
         break;
     case ' ':
-        dalek->Saut();
+        dalek->jmp = 1;
         break;
 
     }
@@ -206,9 +206,10 @@ void KeyboardUp(unsigned char key, int xx, int yy)
     case 'h':
         dalek->bras = 0;
         break;
-     case ' ':
-       dalek->Saut();
-    break;
+    case ' ':
+        dalek->jmp = 0;
+        break;
+
 
     }
 }

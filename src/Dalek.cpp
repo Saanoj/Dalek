@@ -19,6 +19,7 @@ Dalek::Dalek()
     bras = 0;
     extend = 0.2;
     exte = 0;
+    jmp = 0;
 }
 
 Dalek::Draw()
@@ -105,30 +106,22 @@ Dalek::Update(){
             brasangle=-30;
         }
     }
-    glutPostRedisplay();
-}
-Dalek::Saut(){
-    int i;
-        for(i = 0;i<3;i++){
-            Up();
+    if (jmp == 1){
+        extend +=0.1;
+        exte +=0.1;
+        if (extend > 0.5 && exte >0.3){
+            extend = 0.5;
+            exte = 0.3;
         }
-        for(i = 0;i<3;i++){
-            Down();
+    }
+    if (jmp == 0){
+        extend -=0.1;
+        exte -=0.1;
+        if (extend < 0.2 && exte < 0){
+            extend = 0.2;
+            exte = 0;
         }
+    }
     glutPostRedisplay();
-}
-Dalek::Up(){
-    extend +=0.1;
-    exte +=0.1;
-    glutPostRedisplay();
-    printf("%f\n",exte);
-    sleep(10);
 }
 
-Dalek::Down(){
-    extend -=0.1;
-    exte -=0.1;
-    printf("%f\n",exte);
-    glutPostRedisplay();
-    sleep(10);
-}

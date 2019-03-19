@@ -136,6 +136,18 @@ void KeyboardDown(unsigned char key, int xx, int yy)
 {
     switch(key)
     {
+          case 'i':
+        dalek->moveDalek = 1;
+        break;
+    case 'k':
+        dalek->moveDalek = 2;
+        break;
+    case 'j':
+        dalek->moveDalek =3;
+        break;
+    case 'l':
+        dalek->moveDalek = 4;
+        break;
     case 'w': // Unlock Camera
         cam->locked = (cam->locked)?0:1;
         break;
@@ -186,6 +198,14 @@ void KeyboardUp(unsigned char key, int xx, int yy)
 {
     switch(key)
     {
+    case 'i':
+    case 'k':
+        dalek->moveDalek = 0;
+        break;
+    case 'j':
+    case 'l':
+        dalek->moveDalek = 0;
+        break;
     case 'z':
     case 's':
         cam->deltaForward = 0;

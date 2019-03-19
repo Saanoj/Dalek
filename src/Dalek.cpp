@@ -20,13 +20,17 @@ Dalek::Dalek()
     extend = 0.2;
     exte = 0;
     jmp = 0;
+    moveDalek=0;
+    moveForward=0;
+    moveSide=0;
+
 }
 
 Dalek::Draw()
 {
 
     glPushMatrix();
-    glTranslatef(0,exte*10,0);
+    glTranslatef(moveForward,exte*10,moveSide);
         //glTranslatef(10,-0.5,0);
         glRotatef(angle,0,1,0);
         glPushMatrix();
@@ -122,6 +126,43 @@ Dalek::Update(){
             exte = 0;
         }
     }
+
+    if (moveDalek == 1)
+    {
+        moveForward -=0.1;
+        if (moveForward < -49)
+        {
+            moveForward += 0.1;
+        }
+    }
+
+    if (moveDalek == 2)
+    {
+          moveForward +=0.1;
+        if (moveForward < -49)
+        {
+            moveForward -= 0.1;
+        }
+    }
+
+     if (moveDalek == 3)
+    {
+          moveSide -=0.1;
+        if (moveSide < -49)
+        {
+            moveSide += 0.1;
+        }
+    }
+
+     if (moveDalek == 4)
+    {
+          moveSide +=0.1;
+        if (moveSide < -49)
+        {
+            moveSide -= 0.1;
+        }
+    }
+
     glutPostRedisplay();
 }
 

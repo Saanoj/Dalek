@@ -179,7 +179,8 @@ void KeyboardDown(unsigned char key, int xx, int yy)
     case ' ':
         dalek->jmp = 1;
         break;
-
+    case 'a':
+        dalek->shoot = 1;
     }
 }
 void KeyboardUp(unsigned char key, int xx, int yy)

@@ -25,6 +25,7 @@ class Dalek
         float extend;
         float exte;
         int jmp;
+        int shoot;
     protected:
 
     private:

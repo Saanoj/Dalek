@@ -65,15 +65,17 @@ void Map::DrawGround()
     glTexCoord2f(50.0f, 0.0f);
     glVertex3f(50.0f, 0.0f, -50.0f);
     glEnd();
-    glTranslatef(0.0f, 1.0f, 0.0f);
-    b->SetTexture(FRONT, ListeTextures[1]);
-    b->SetTexture(BACK, ListeTextures[7]);
-    b->SetTexture(TOP, ListeTextures[12]);
-    b->SetTexture(BOT, ListeTextures[4]);
-    b->SetTexture(RIGHT, ListeTextures[17]);
-    b->SetTexture(LEFT, ListeTextures[9]);
-    b->SetTexture(SPHERE, ListeTextures[19]);
-    b->Draw();
+    glPushMatrix();
+        glTranslatef(0.0f, 3.0f, 0.0f);
+        b->SetTexture(FRONT, ListeTextures[1]);
+        b->SetTexture(BACK, ListeTextures[7]);
+        b->SetTexture(TOP, ListeTextures[12]);
+        b->SetTexture(BOT, ListeTextures[4]);
+        b->SetTexture(RIGHT, ListeTextures[17]);
+        b->SetTexture(LEFT, ListeTextures[9]);
+        b->SetTexture(SPHERE, ListeTextures[19]);
+        b->Draw();
+    glPopMatrix();
 
 }
 

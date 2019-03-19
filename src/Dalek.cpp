@@ -127,7 +127,7 @@ Dalek::Update(){
             exte = 0;
         }
     }
-    if(shoot == 1 ){
+ /*   if(shoot == 1 ){
         int i;
         Block *bulet = new Block(10,10,10);
         glEnable(GL_TEXTURE_2D);
@@ -147,7 +147,9 @@ Dalek::Update(){
             bulet->SetTexture(LEFT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
             bulet->Draw();
        // }
-    }
+    }*/
+
+
     if (moveDalek == 1)
     {
         moveForward -=0.1;

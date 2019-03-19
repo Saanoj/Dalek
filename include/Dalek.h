@@ -26,6 +26,7 @@ class Dalek
         float exte;
         // Deplacement du dalek
         float moveDalek;
+        float moveDalekSide;
         float moveForward;
         float moveSide;
         int jmp;

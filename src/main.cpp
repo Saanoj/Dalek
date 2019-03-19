@@ -143,10 +143,10 @@ void KeyboardDown(unsigned char key, int xx, int yy)
         dalek->moveDalek = 2;
         break;
     case 'l':
-        dalek->moveDalek =3;
+        dalek->moveDalekSide =3;
         break;
     case 'j':
-        dalek->moveDalek = 4;
+        dalek->moveDalekSide = 4;
         break;
     case 'w': // Unlock Camera
         cam->locked = (cam->locked)?0:1;
@@ -169,30 +169,14 @@ void KeyboardDown(unsigned char key, int xx, int yy)
     case 'h':
         dalek->bras =1;
         break;
-    case 't':
-        dalek->extend +=0.2;
-        dalek->exte +=0.2;
-
-        if(dalek->extend>0.6||dalek->exte>0.6){
-            dalek->extend -=0.2;
-            dalek->exte -=0.2;
-        }
-        glutPostRedisplay();
-        break;
-    case 'g':
-        dalek->extend -=0.2;
-        dalek->exte -=0.2;
-        if(dalek->extend<0||dalek->exte<0){
-            dalek->extend +=0.2;
-            dalek->exte +=0.2;
-        }
-        glutPostRedisplay();
-        break;
     case ' ':
         dalek->jmp = 1;
         break;
     case 'a':
         dalek->shoot = 1;
+    case 'r':
+        dalek->angleval=1;
+        break;
     }
 }
 void KeyboardUp(unsigned char key, int xx, int yy)
@@ -200,10 +184,16 @@ void KeyboardUp(unsigned char key, int xx, int yy)
     switch(key)
     {
     case 'i':
+         dalek->moveDalek = 0;
+        break;
     case 'k':
+         dalek->moveDalek = 0;
+        break;
     case 'j':
+         dalek->moveDalekSide = 0;
+        break;
     case 'l':
-        dalek->moveDalek = 0;
+        dalek->moveDalekSide = 0;
         break;
     case 'z':
     case 's':
@@ -217,7 +207,6 @@ void KeyboardUp(unsigned char key, int xx, int yy)
         dalek->angleval =0;
         break;
     case 'a':
-
     case 'e':
         dalek->longueurval =0;
         break;

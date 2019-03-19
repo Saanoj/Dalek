@@ -168,7 +168,7 @@ Dalek::Update(){
         }
     }
 
-     if (moveDalek == 3)
+     if (moveDalekSide == 3)
     {
           moveSide -=0.1;
         if (moveSide < -49)
@@ -177,7 +177,7 @@ Dalek::Update(){
         }
     }
 
-     if (moveDalek == 4)
+     if (moveDalekSide == 4)
     {
           moveSide +=0.1;
         if (moveSide < -49)

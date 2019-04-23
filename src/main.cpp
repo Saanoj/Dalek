@@ -140,13 +140,13 @@ void KeyboardDown(unsigned char key, int xx, int yy)
         dalek->moveDalek = 1;
         break;
     case 'k':
-        dalek->moveDalek = 2;
+        dalek->moveDalek = -1;
         break;
     case 'l':
-        dalek->moveDalekSide =3;
+        dalek->moveDalekSide =1;
         break;
     case 'j':
-        dalek->moveDalekSide = 4;
+        dalek->moveDalekSide = -1;
         break;
     case 'w': // Unlock Camera
         cam->locked = (cam->locked)?0:1;

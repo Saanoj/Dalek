@@ -32,6 +32,7 @@ class Dalek
         int jmp;
         int shoot;
 
+        float angleh;
         float dirx;
         float diry;
         float dirz;

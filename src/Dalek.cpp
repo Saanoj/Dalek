@@ -161,20 +161,20 @@ Dalek::Update(){
        // }
     }*/
 
-    dif (angleval==1){
+    if (angleval==1){
         angle = angle+1;
         dirx = sin(angleh + angle)*cos(0 + angle);
         dirz = -cos(angleh + angle)*cos(0 + angle);
     }
     if (moveDalek || moveDalekSide)
     {
-
+/* ca fais crash le dalek reflechie jonas
         moveForward += moveDalek * (dirx/cos(angle)) * MOVE_SPEED;
         moveSide += moveDalek * (dirz/cos(angle)) * MOVE_SPEED;
         moveForward += moveDalekSide * (dirz/cos(angle)) * MOVE_SPEED;
         moveSide -= moveDalekSide * (dirx/cos(angle)) * MOVE_SPEED;
 
-
+*/
         glutPostRedisplay();
     }
 }

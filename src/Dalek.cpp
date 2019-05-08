@@ -9,6 +9,7 @@ void sleep(unsigned int mseconds)
     clock_t goal = mseconds + clock();
     while (goal > clock());
 }
+<<<<<<< HEAD
 
 void Dalek::LoadTextures()
 {
@@ -24,6 +25,8 @@ void Dalek::SetTexture(int nb, GLuint texture)
     textures[nb] = texture;
 }
 
+=======
+>>>>>>> parent of 23fcf45... Texturing
 Dalek::Dalek()
 {
     longueur = 1;
@@ -50,16 +53,12 @@ Dalek::Dalek()
     deltaAnglex = 0.0f;
     deltaAngley = 0.0f;
 
-      for (int i = 0; i < 6; i++)
-    {
-        textures[i] = 0;
-    }
-
 }
 
 Dalek::Draw()
 {
 
+<<<<<<< HEAD
 
 //        glEnable(GL_TEXTURE_2D);
 //        glColor3f(1.0f, 1.0f, 1.0f);
@@ -70,6 +69,10 @@ Dalek::Draw()
 //        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
 
         glTranslatef(moveForward,exte*10,moveSide);
+=======
+    glPushMatrix();
+    glTranslatef(moveForward,exte*10,moveSide);
+>>>>>>> parent of 23fcf45... Texturing
         //glTranslatef(10,-0.5,0);
         glRotatef(angle,0,1,0);
         glPushMatrix();
@@ -89,8 +92,6 @@ Dalek::Draw()
         glPopMatrix();
 
         /**bras gauche**/
-
-
         glPushMatrix();
             glRotatef(brasangle,0,1,0);
             glPushMatrix();
@@ -99,29 +100,24 @@ Dalek::Draw()
                 glScalef(longueur,0.1,0.1);
                 //glutSolidCube(2);
                 Block *brasG = new Block(1.0f, 2.0f, 2.0f);
-                brasG->SetTexture(FRONT, ListeTextures[1]);
-                brasG->SetTexture(BACK, ListeTextures[1]);
-                brasG->SetTexture(TOP, ListeTextures[1]);
-                brasG->SetTexture(BOT, ListeTextures[1]);
-                brasG->SetTexture(RIGHT, ListeTextures[1]);
-                brasG->SetTexture(LEFT, ListeTextures[1]);
                 brasG->DrawBras();
             glPopMatrix();
         glPopMatrix();
         /**bras droit**/
-
-
         glPushMatrix();
             glTranslatef(-0.5,exte*10,0);
             glTranslatef(1,1.5,-0.5);
             glScalef(0.5,0.1,0.1);
             Block *brasD = new Block(1.0f, 2.0f, 2.0f);
+<<<<<<< HEAD
             brasD->SetTexture(FRONT, ListeTextures[1]);
             brasD->SetTexture(BACK, ListeTextures[1]);
             brasD->SetTexture(TOP, ListeTextures[1]);
             brasD->SetTexture(BOT, ListeTextures[1]);
             brasD->SetTexture(RIGHT, ListeTextures[1]);
             brasD->SetTexture(LEFT, ListeTextures[1]);
+=======
+>>>>>>> parent of 23fcf45... Texturing
             brasD->DrawBras();
         glPopMatrix();
 

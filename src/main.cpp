@@ -300,8 +300,8 @@ void renderScene(void)
                 );
 
     m->DrawGround();
-    dalek->Draw();
     m->DrawSkybox(cam);
+    dalek->Draw();
     glutSwapBuffers();
 }
 

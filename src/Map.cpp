@@ -47,7 +47,6 @@ void Map::DrawGround()
 {
     Block *b = new Block(2.0f, 2.0f, 2.0f);
     Dalek *dalek = new Dalek();
-
     glEnable(GL_TEXTURE_2D);
     glColor3f(1.0f, 1.0f, 1.0f);
     glBindTexture(GL_TEXTURE_2D, ListeTextures[11]);
@@ -55,7 +54,6 @@ void Map::DrawGround()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-    glPushMatrix();
 
     glBegin(GL_QUADS);
     glTexCoord2f(0.0f, 0.0f);
@@ -78,7 +76,6 @@ void Map::DrawGround()
         b->SetTexture(SPHERE, ListeTextures[19]);
         b->Draw();
     glPopMatrix();
-
 
 }
 

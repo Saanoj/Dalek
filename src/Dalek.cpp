@@ -61,13 +61,13 @@ Dalek::Draw()
 {
 
 
-        glEnable(GL_TEXTURE_2D);
-        glColor3f(1.0f, 1.0f, 1.0f);
-        glBindTexture(GL_TEXTURE_2D, ListeTextures[1]);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+//        glEnable(GL_TEXTURE_2D);
+//        glColor3f(1.0f, 1.0f, 1.0f);
+//        glBindTexture(GL_TEXTURE_2D, ListeTextures[1]);
+//        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+//        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
 
         glTranslatef(moveForward,exte*10,moveSide);
         //glTranslatef(10,-0.5,0);
@@ -123,7 +123,7 @@ Dalek::Draw()
             glTranslatef(1,1.5,-0.5);
             glScalef(0.5,0.1,0.1);
             Block *brasD = new Block(1.0f, 2.0f, 2.0f);
-            brasG->SetTexture(FRONT, ListeTextures[1]);
+            brasD->SetTexture(FRONT, ListeTextures[1]);
             brasD->SetTexture(BACK, ListeTextures[1]);
             brasD->SetTexture(TOP, ListeTextures[1]);
             brasD->SetTexture(BOT, ListeTextures[1]);

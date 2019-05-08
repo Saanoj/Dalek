@@ -44,7 +44,7 @@ void Camera::updatePos()
         else
         {
             posx += deltaForward * dirx * MOVE_SPEED;
-            posy += deltaForward * diry * MOVE_SPEED;
+            posy += deltaForward * diry * MOVE_SPEED;//y
             posz += deltaForward * dirz * MOVE_SPEED;
             posx += deltaStrafe * dirz * MOVE_SPEED;
             posz -= deltaStrafe * dirx * MOVE_SPEED;

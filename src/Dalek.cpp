@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "Block.h"
 #include <time.h>
+#include <math.h>
 void sleep(unsigned int mseconds)
 {
     clock_t goal = mseconds + clock();
@@ -12,7 +13,7 @@ Dalek::Dalek()
 {
     longueur = 1;
     longueur2 = 1;
-    angle =180;
+    angle =90;
     angleval=0;
     longueurval= 0;
     brasangle = 0;
@@ -25,6 +26,15 @@ Dalek::Dalek()
     moveDalek=0;
     moveForward=0;
     moveSide=0;
+
+    angleh = 0.0f;
+    dirx = 0.0f;
+    diry = 0.0f;
+    dirz = -1.0f;
+
+    deltaAnglex = 0.0f;
+    deltaAngley = 0.0f;
+
 }
 
 Dalek::Draw()
@@ -84,9 +94,7 @@ Dalek::Draw()
 }
 
 Dalek::Update(){
-    if (angleval==1){
-        angle = angle+1;
-    }
+
     if (longueurval==1){
         longueur +=0.1;
         longueur2 +=0.1;
@@ -153,9 +161,27 @@ Dalek::Update(){
        // }
     }*/
 
-
-    if (moveDalek == 1)
+    if (angleval==1){
+        angle = angle+1;
+        dirx = sin(angleh + angle)*cos(0 + angle);
+        dirz = -cos(angleh + angle)*cos(0 + angle);
+    }
+    if (moveDalek || moveDalekSide)
     {
+/* ca fais crash le dalek reflechie jonas
+        moveForward += moveDalek * (dirx/cos(angle)) * MOVE_SPEED;
+        moveSide += moveDalek * (dirz/cos(angle)) * MOVE_SPEED;
+        moveForward += moveDalekSide * (dirz/cos(angle)) * MOVE_SPEED;
+        moveSide -= moveDalekSide * (dirx/cos(angle)) * MOVE_SPEED;
+
+*/
+        glutPostRedisplay();
+    }
+}
+/*
+    if (moveDalek == 1
+    {
+
         moveForward -=0.1;
         if (moveForward < -49)
         {
@@ -163,7 +189,7 @@ Dalek::Update(){
         }
     }
 
-    if (moveDalek == 2)
+    if (moveDalek == -1)
     {
           moveForward +=0.1;
         if (moveForward < -49)
@@ -190,5 +216,5 @@ Dalek::Update(){
         }
     }
 
-    glutPostRedisplay();
-}
+
+}*/

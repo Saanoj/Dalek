@@ -284,46 +284,46 @@
 	<GL/glu.h>
 	"glut.h"
 
-1552386931 source:c:\users\jonas\onedrive\documents\dalek\src\block.cpp
+1553083816 source:c:\users\jonas\onedrive\documents\dalek\src\block.cpp
 	"Block.h"
 
-1552386926 c:\users\jonas\onedrive\documents\dalek\include\block.h
+1553083816 c:\users\jonas\onedrive\documents\dalek\include\block.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 	"SOIL.h"
 
-976663372 c:\users\jonas\onedrive\documents\dalek\include\glut.h
+976666972 c:\users\jonas\onedrive\documents\dalek\include\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-1215450808 c:\users\jonas\onedrive\documents\dalek\include\soil.h
+1215454408 c:\users\jonas\onedrive\documents\dalek\include\soil.h
 
-1395997220 source:c:\users\jonas\onedrive\documents\dalek\src\camera.cpp
+1555929672 source:c:\users\jonas\onedrive\documents\dalek\src\camera.cpp
 	"Camera.h"
 	<math.h>
 
-1395960066 c:\users\jonas\onedrive\documents\dalek\include\camera.h
+1395963666 c:\users\jonas\onedrive\documents\dalek\include\camera.h
 
-1553005254 source:c:\users\jonas\onedrive\documents\dalek\src\map.cpp
+1553008854 source:c:\users\jonas\onedrive\documents\dalek\src\map.cpp
 	"Map.h"
 	"Block.h"
 	"Dalek.h"
 
-1395959424 c:\users\jonas\onedrive\documents\dalek\include\map.h
+1395963024 c:\users\jonas\onedrive\documents\dalek\include\map.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 	"SOIL.h"
 	"Camera.h"
 
-1553007867 c:\users\jonas\onedrive\documents\dalek\include\dalek.h
+1555929597 c:\users\jonas\onedrive\documents\dalek\include\dalek.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 
-1553008371 source:c:\users\jonas\onedrive\documents\dalek\src\main.cpp
+1556994453 source:c:\users\jonas\onedrive\documents\dalek\src\main.cpp
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -340,12 +340,13 @@
 	<math.h>
 	<unistd.h>
 
-1553008524 source:c:\users\jonas\onedrive\documents\dalek\src\dalek.cpp
+1556994372 source:c:\users\jonas\onedrive\documents\dalek\src\dalek.cpp
 	"Dalek.h"
 	<stdio.h>
 	<stdlib.h>
 	"Block.h"
 	<time.h>
+	<math.h>
 
 1552405772 source:c:\wamp64\www\dalek\src\block.cpp
 	"Block.h"

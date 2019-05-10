@@ -49,8 +49,12 @@ Dalek::Dalek()
     extend = 0.2;
     exte = 0;
     jmp = 0;
+    tirFlag=1;
 
     shoot = 0;
+    shootx=1.0f;
+    shooty=2.0f;
+    shootz=2.0f;
     moveDalek=0;
     moveForward=0;
     moveSide=0;
@@ -116,15 +120,39 @@ Dalek::Draw()
                 //glutSolidCube(2);
                 Block *brasG = new Block(1.0f, 2.0f, 2.0f);
 
+
                 brasG->DrawBras();
             glPopMatrix();
         glPopMatrix();
+
+            /** TIR */
+
+//          glPushMatrix();
+//            glRotatef(brasangle,0,1,0);
+//            glPushMatrix();
+//                glTranslatef(-0.5,exte*10,0);
+//                glTranslatef(tir,1.5,0.5);
+//                glScalef(longueur,0.1,0.1);
+//                glutSolidCube(2);
+//                Block *tir = new Block(shootx,shooty,shootz);
+//                tir->DrawBras();
+//            glPopMatrix();
+//            glPopMatrix();
+
+
+
         /**bras droit**/
         glPushMatrix();
             glTranslatef(-0.5,exte*10,0);
             glTranslatef(1,1.5,-0.5);
             glScalef(0.5,0.1,0.1);
             Block *brasD = new Block(1.0f, 2.0f, 2.0f);
+                glPushMatrix();
+                glTranslatef(tir,0,0);
+                Block *tir = new Block(1.0f, 2.0f, 2.0f);
+                tir->DrawBras();
+                glPopMatrix();
+
             brasD->DrawBras();
         glPopMatrix();
 
@@ -187,27 +215,19 @@ Dalek::Update(){
             exte = 0;
         }
     }
- /*   if(shoot == 1 ){
-        int i;
-        Block *bulet = new Block(10,10,10);
-        glEnable(GL_TEXTURE_2D);
-    glColor3f(1.0f, 1.0f, 1.0f);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-        //for(i=0;i<10;i++){
+    if(shoot == 1 ){
+        tirFlag++;
+    }
+     if (tirFlag >= 2 && tirFlag <5)
+        {
+            tir +=0.2f;
 
-
-            bulet->SetTexture(FRONT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(BACK, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(TOP, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(BOT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(RIGHT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(LEFT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->Draw();
-       // }
-    }*/
+        }
+        else
+        {
+            tir=0;
+            tirFlag = 1;
+        }
 
     if (angleval==1){
         angle = angle+1;

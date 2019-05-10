@@ -152,19 +152,19 @@ void KeyboardDown(unsigned char key, int xx, int yy)
         cam->locked = (cam->locked)?0:1;
         break;
     case 'z':
-        //cam->deltaForward = 1;
+        cam->deltaForward = 1;
         dalek->moveDalek = 1;
         break;
     case 's':
-       // cam->deltaForward = -1;
+        cam->deltaForward = -1;
         dalek->moveDalek = -1;
         break;
     case 'd':
-       // cam->deltaStrafe = -1;
+        cam->deltaStrafe = -1;
         dalek->moveDalekSide =-1;
         break;
     case 'q':
-        //cam->deltaStrafe = 1;
+        cam->deltaStrafe = 1;
         dalek->moveDalekSide = 1;
         break;
     case 'a':
@@ -198,12 +198,12 @@ void KeyboardUp(unsigned char key, int xx, int yy)
         break;
     case 'z':
     case 's':
-        //cam->deltaForward = 0;
+        cam->deltaForward = 0;
         dalek->moveDalek = 0;
         break;
     case 'q':
     case 'd':
-        //cam->deltaStrafe = 0;
+        cam->deltaStrafe = 0;
         dalek->moveDalekSide = 0;
         break;
     case 'r':

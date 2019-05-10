@@ -323,7 +323,7 @@
 	<GL/glu.h>
 	"glut.h"
 
-1557490188 source:c:\users\jonas\onedrive\documents\dalek\src\main.cpp
+1557486962 source:c:\users\jonas\onedrive\documents\dalek\src\main.cpp
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -340,7 +340,7 @@
 	<math.h>
 	<unistd.h>
 
-1557490920 source:c:\users\jonas\onedrive\documents\dalek\src\dalek.cpp
+1557487350 source:c:\users\jonas\onedrive\documents\dalek\src\dalek.cpp
 	"Dalek.h"
 	<stdio.h>
 	<stdlib.h>

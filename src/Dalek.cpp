@@ -74,7 +74,7 @@ Dalek::Draw()
 
     glTranslatef(moveForward,exte*10,moveSide);
     glPushMatrix();
-    glTranslatef(moveForward,exte*10,moveSide);
+    //glTranslatef(moveForward,exte*10,moveSide);
         //glTranslatef(10,-0.5,0);
         glRotatef(angle,0,1,0);
         glPushMatrix();
@@ -123,7 +123,7 @@ Dalek::Draw()
                 brasG->SetTexture(BOT, ListeTextures[1]);
                 brasG->SetTexture(RIGHT, ListeTextures[1]);
                 brasG->SetTexture(LEFT, ListeTextures[1]);
-                brasG->DrawBras();
+                brasG->Draw();
             glPopMatrix();
         glPopMatrix();
         /**bras droit**/
@@ -138,7 +138,7 @@ Dalek::Draw()
             brasD->SetTexture(BOT, ListeTextures[1]);
             brasD->SetTexture(RIGHT, ListeTextures[1]);
             brasD->SetTexture(LEFT, ListeTextures[1]);
-            brasD->DrawBras();
+            brasD->Draw();
         glPopMatrix();
 
 

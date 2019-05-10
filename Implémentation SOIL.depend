@@ -284,7 +284,7 @@
 	<GL/glu.h>
 	"glut.h"
 
-1553083816 source:c:\users\jonas\onedrive\documents\dalek\src\block.cpp
+1557485217 source:c:\users\jonas\onedrive\documents\dalek\src\block.cpp
 	"Block.h"
 
 1553083816 c:\users\jonas\onedrive\documents\dalek\include\block.h
@@ -306,7 +306,7 @@
 
 1395963666 c:\users\jonas\onedrive\documents\dalek\include\camera.h
 
-1553008854 source:c:\users\jonas\onedrive\documents\dalek\src\map.cpp
+1557483455 source:c:\users\jonas\onedrive\documents\dalek\src\map.cpp
 	"Map.h"
 	"Block.h"
 	"Dalek.h"
@@ -318,12 +318,12 @@
 	"SOIL.h"
 	"Camera.h"
 
-1555929597 c:\users\jonas\onedrive\documents\dalek\include\dalek.h
+1557483916 c:\users\jonas\onedrive\documents\dalek\include\dalek.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 
-1556994453 source:c:\users\jonas\onedrive\documents\dalek\src\main.cpp
+1557484312 source:c:\users\jonas\onedrive\documents\dalek\src\main.cpp
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -340,11 +340,12 @@
 	<math.h>
 	<unistd.h>
 
-1556994372 source:c:\users\jonas\onedrive\documents\dalek\src\dalek.cpp
+1557484873 source:c:\users\jonas\onedrive\documents\dalek\src\dalek.cpp
 	"Dalek.h"
 	<stdio.h>
 	<stdlib.h>
 	"Block.h"
+	"Map.h"
 	<time.h>
 	<math.h>
 

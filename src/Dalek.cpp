@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Block.h"
+#include "Map.h"
 #include <time.h>
 #include <math.h>
 
@@ -41,7 +42,7 @@ void Dalek::LoadTextures()
 
 Dalek::Dalek()
 {
-    longueur = 1;
+    longueur = 17;
     longueur2 = 1;
     angle =90;
     angleval=0;
@@ -87,6 +88,8 @@ Dalek::Draw()
 
     glPushMatrix();
     glTranslatef(moveForward,exte*10,moveSide);
+    glPushMatrix();
+    //glTranslatef(moveForward,exte*10,moveSide);
         //glTranslatef(10,-0.5,0);
         glRotatef(angle,0,1,0);
         glPushMatrix();
@@ -135,7 +138,7 @@ Dalek::Draw()
                 brasG->SetTexture(BOT, ListeTextures[1]);
                 brasG->SetTexture(RIGHT, ListeTextures[1]);
                 brasG->SetTexture(LEFT, ListeTextures[1]);
-                brasG->DrawBras();
+                brasG->Draw();
             glPopMatrix();
         glPopMatrix();
         /**bras droit**/
@@ -150,7 +153,7 @@ Dalek::Draw()
             brasD->SetTexture(BOT, ListeTextures[1]);
             brasD->SetTexture(RIGHT, ListeTextures[1]);
             brasD->SetTexture(LEFT, ListeTextures[1]);
-            brasD->DrawBras();
+            brasD->Draw();
         glPopMatrix();
 
 
@@ -162,6 +165,7 @@ Dalek::Draw()
         glPopMatrix();
 
     glPopMatrix();
+
 
 
 }
@@ -212,27 +216,9 @@ Dalek::Update(){
             exte = 0;
         }
     }
- /*   if(shoot == 1 ){
-        int i;
-        Block *bulet = new Block(10,10,10);
-        glEnable(GL_TEXTURE_2D);
-    glColor3f(1.0f, 1.0f, 1.0f);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-        //for(i=0;i<10;i++){
+    if(shoot == 1 ){
 
-
-            bulet->SetTexture(FRONT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(BACK, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(TOP, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(BOT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(RIGHT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(LEFT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->Draw();
-       // }
-    }*/
+    }
 
     if (angleval==1){
         angle = angle+1;
@@ -241,13 +227,20 @@ Dalek::Update(){
     }
     if (moveDalek || moveDalekSide)
     {
-/* ca fais crash le dalek reflechie jonas
+// ca fais crash le dalek reflechie jonas
+/*
         moveForward += moveDalek * (dirx/cos(angle)) * MOVE_SPEED;
         moveSide += moveDalek * (dirz/cos(angle)) * MOVE_SPEED;
         moveForward += moveDalekSide * (dirz/cos(angle)) * MOVE_SPEED;
         moveSide -= moveDalekSide * (dirx/cos(angle)) * MOVE_SPEED;
-
 */
+        moveForward += moveDalek * dirx * MOVE_SPEED;
+        moveSide += moveDalek * dirz * MOVE_SPEED;
+        moveForward -= moveDalekSide * dirz * MOVE_SPEED;
+        moveSide -= moveDalekSide * dirx * MOVE_SPEED;
+
+
+
         glutPostRedisplay();
     }
 }

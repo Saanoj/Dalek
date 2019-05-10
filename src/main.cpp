@@ -136,7 +136,7 @@ void KeyboardDown(unsigned char key, int xx, int yy)
 {
     switch(key)
     {
-    case 'i':
+    /*case 'i':
         dalek->moveDalek = 1;
         break;
     case 'k':
@@ -147,7 +147,7 @@ void KeyboardDown(unsigned char key, int xx, int yy)
         break;
     case 'j':
         dalek->moveDalekSide = -1;
-        break;
+        break;*/
     case 'w': // Unlock Camera
         cam->locked = (cam->locked)?0:1;
         break;
@@ -167,17 +167,18 @@ void KeyboardDown(unsigned char key, int xx, int yy)
         cam->deltaStrafe = 1;
         dalek->moveDalekSide = 1;
         break;
-    case 'f':
+    case 'a':
         dalek->bras=2;
         break;
-    case 'h':
+    case 'e':
         dalek->bras =1;
         break;
     case ' ':
         dalek->jmp = 1;
         break;
-    case 'a':
+    case 't':
         dalek->shoot = 1;
+        break;
     case 'r':
         dalek->angleval=1;
         break;
@@ -187,14 +188,14 @@ void KeyboardUp(unsigned char key, int xx, int yy)
 {
     switch(key)
     {
-    case 'i':
+    /*case 'i':
     case 'k':
          dalek->moveDalek = 0;
         break;
     case 'j':
     case 'l':
         dalek->moveDalekSide = 0;
-        break;
+        break;*/
     case 'z':
     case 's':
         cam->deltaForward = 0;
@@ -208,18 +209,20 @@ void KeyboardUp(unsigned char key, int xx, int yy)
     case 'r':
         dalek->angleval =0;
         break;
-    case 'a':
-    case 'e':
+    case 'w':
+    case 'x':
         dalek->longueurval =0;
         break;
-    case 'f':
-    case 'h':
+    case 'a':
+    case 'e':
         dalek->bras = 0;
         break;
     case ' ':
         dalek->jmp = 0;
         break;
-
+    case 't':
+        dalek->shoot = 0;
+        break;
 
     }
 }

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Block.h"
+#include "Map.h"
 #include <time.h>
 #include <math.h>
 void sleep(unsigned int mseconds)
@@ -139,27 +140,9 @@ Dalek::Update(){
             exte = 0;
         }
     }
- /*   if(shoot == 1 ){
-        int i;
-        Block *bulet = new Block(10,10,10);
-        glEnable(GL_TEXTURE_2D);
-    glColor3f(1.0f, 1.0f, 1.0f);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-        //for(i=0;i<10;i++){
+    if(shoot == 1 ){
 
-
-            bulet->SetTexture(FRONT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(BACK, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(TOP, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(BOT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(RIGHT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->SetTexture(LEFT, SOIL_load_OGL_texture("img/laser.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y));
-            bulet->Draw();
-       // }
-    }*/
+    }
 
     if (angleval==1){
         angle = angle+1;
@@ -168,13 +151,20 @@ Dalek::Update(){
     }
     if (moveDalek || moveDalekSide)
     {
-/* ca fais crash le dalek reflechie jonas
+// ca fais crash le dalek reflechie jonas
+/*
         moveForward += moveDalek * (dirx/cos(angle)) * MOVE_SPEED;
         moveSide += moveDalek * (dirz/cos(angle)) * MOVE_SPEED;
         moveForward += moveDalekSide * (dirz/cos(angle)) * MOVE_SPEED;
         moveSide -= moveDalekSide * (dirx/cos(angle)) * MOVE_SPEED;
-
 */
+        moveForward += moveDalek * dirx * MOVE_SPEED;
+        //moveSide += moveDalek * dirz * MOVE_SPEED;
+        moveForward -= moveDalekSide * dirz * MOVE_SPEED;
+        moveSide -= moveDalekSide * dirx * MOVE_SPEED;
+
+
+
         glutPostRedisplay();
     }
 }

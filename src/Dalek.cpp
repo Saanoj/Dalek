@@ -223,6 +223,11 @@ Dalek::Update(){
         moveSide -= moveDalekSide * (dirx/cos(angle)) * MOVE_SPEED;
 
 */
+        moveForward += moveDalek * dirx * MOVE_SPEED;
+        moveSide += moveDalek * dirz * MOVE_SPEED;
+      //  moveForward += moveDalekSide * dirz * MOVE_SPEED;
+        moveSide -= moveDalekSide * dirx * MOVE_SPEED;
+
         glutPostRedisplay();
     }
 }

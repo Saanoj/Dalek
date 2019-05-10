@@ -348,42 +348,41 @@
 	<time.h>
 	<math.h>
 
-1557487030 source:c:\wamp64\www\dalek\src\block.cpp
+1552405772 source:c:\wamp64\www\dalek\src\block.cpp
 	"Block.h"
 
-1553014839 c:\wamp64\www\dalek\include\block.h
+1552405772 c:\wamp64\www\dalek\include\block.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 	"SOIL.h"
 
-1552409372 c:\wamp64\www\dalek\include\glut.h
+1552405772 c:\wamp64\www\dalek\include\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-1552409372 c:\wamp64\www\dalek\include\soil.h
+1552405772 c:\wamp64\www\dalek\include\soil.h
 
-1557322572 source:c:\wamp64\www\dalek\src\camera.cpp
+1552405772 source:c:\wamp64\www\dalek\src\camera.cpp
 	"Camera.h"
 	<math.h>
 
-1552409372 c:\wamp64\www\dalek\include\camera.h
+1552405772 c:\wamp64\www\dalek\include\camera.h
 
-1557491701 source:c:\wamp64\www\dalek\src\dalek.cpp
+1553008952 source:c:\wamp64\www\dalek\src\dalek.cpp
 	"Dalek.h"
 	<stdio.h>
 	<stdlib.h>
 	"Block.h"
 	<time.h>
-	<math.h>
 
-1557490848 c:\wamp64\www\dalek\include\dalek.h
+1553008914 c:\wamp64\www\dalek\include\dalek.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 
-1557491762 source:c:\wamp64\www\dalek\src\main.cpp
+1553008787 source:c:\wamp64\www\dalek\src\main.cpp
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -400,54 +399,53 @@
 	<math.h>
 	<unistd.h>
 
-1552409372 c:\wamp64\www\dalek\include\map.h
+1552405772 c:\wamp64\www\dalek\include\map.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 	"SOIL.h"
 	"Camera.h"
 
-1557486060 source:c:\wamp64\www\dalek\src\map.cpp
+1553008031 source:c:\wamp64\www\dalek\src\map.cpp
 	"Map.h"
 	"Block.h"
 	"Dalek.h"
 
-1557491578 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\block.cpp
+1553013502 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\block.cpp
 	"Block.h"
 
-1557327484 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\block.h
+1553013468 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\block.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 	"SOIL.h"
 
-1557327484 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\glut.h
+1553005198 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\glut.h
 	<windows.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-1557327484 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\soil.h
+1553005198 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\soil.h
 
-1557327484 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\camera.cpp
+1553005198 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\camera.cpp
 	"Camera.h"
 	<math.h>
 
-1557327484 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\camera.h
+1553005198 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\camera.h
 
-1557491775 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\dalek.cpp
+1553014943 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\dalek.cpp
 	"Dalek.h"
 	<stdio.h>
 	<stdlib.h>
 	"Block.h"
 	<time.h>
-	<math.h>
 
-1557487016 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\dalek.h
+1553014943 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\dalek.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 
-1557487016 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\main.cpp
+1553014943 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\main.cpp
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -464,14 +462,14 @@
 	<math.h>
 	<unistd.h>
 
-1557327484 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\map.h
+1553005198 c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\include\map.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
 	"SOIL.h"
 	"Camera.h"
 
-1557330073 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\map.cpp
+1553011718 source:c:\users\thoma\desktop\2i1\2éme semestre\infographie\dalek\src\map.cpp
 	"Map.h"
 	"Block.h"
 	"Dalek.h"

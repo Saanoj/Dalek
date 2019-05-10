@@ -36,18 +36,11 @@ class Dalek
         float moveSide;
         int jmp;
         int shoot;
-        float tir;
-        float tirFlag;
-        int shootFlag;
 
         float angleh;
         float dirx;
         float diry;
         float dirz;
-
-        float shootx;
-        float shooty;
-        float shootz;
 
         float deltaAnglex;
         float deltaAngley;

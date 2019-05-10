@@ -311,6 +311,7 @@ void renderScene(void)
 void LoadTextures()
 {
     m->LoadTextures();
+    dalek->LoadTextures();
 }
 
 int main(int argc, char **argv)

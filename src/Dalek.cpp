@@ -52,8 +52,9 @@ Dalek::Dalek()
 
     shoot = 0;
     moveDalek=0;
+    moveDalekSide = 0;
     moveForward=0;
-    moveSide=0;
+    moveSide=1;
 
     angleh = 0.0f;
     dirx = 0.0f;
@@ -71,8 +72,9 @@ Dalek::Draw()
     glEnable(GL_TEXTURE_2D);
 
 
-    glPushMatrix();
+
     glTranslatef(moveForward,exte*10,moveSide);
+    glPushMatrix();
         //glTranslatef(10,-0.5,0);
         glRotatef(angle,0,1,0);
         glPushMatrix();
@@ -210,9 +212,10 @@ Dalek::Update(){
     }*/
 
     if (angleval==1){
-        angle = angle+1;
-        dirx = sin(angleh + angle)*cos(0 + angle);
-        dirz = -cos(angleh + angle)*cos(0 + angle);
+        angle = angle-1;
+        angleh+= angle;
+        dirx = sin(angleh + angle)*cos(0);
+        dirz = -cos(angleh + angle)*cos(0);
     }
     if (moveDalek || moveDalekSide)
     {
@@ -223,9 +226,10 @@ Dalek::Update(){
         moveSide -= moveDalekSide * (dirx/cos(angle)) * MOVE_SPEED;
 
 */
-        moveForward += moveDalek * dirx * MOVE_SPEED;
+
+        moveForward -= moveDalek * dirx * MOVE_SPEED;
         moveSide += moveDalek * dirz * MOVE_SPEED;
-      //  moveForward += moveDalekSide * dirz * MOVE_SPEED;
+        moveForward += moveDalekSide * dirz * MOVE_SPEED;
         moveSide -= moveDalekSide * dirx * MOVE_SPEED;
 
         glutPostRedisplay();

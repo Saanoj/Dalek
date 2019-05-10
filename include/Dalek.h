@@ -20,6 +20,9 @@ class Dalek
         void LoadTextures(void);
         GLuint ListeTextures[20];
 
+
+
+
         float longueur;
         float longueur2;
         float angle;
@@ -47,6 +50,7 @@ class Dalek
     protected:
 
     private:
+
 };
 
 #endif // DALEK_H

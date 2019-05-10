@@ -15,7 +15,7 @@ void Dalek::LoadTextures()
 
     // Textures utilisables
     ListeTextures[0] = SOIL_load_OGL_texture("img/cliff.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y);
-    ListeTextures[1] = SOIL_load_OGL_texture("img/space3.png",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
+    ListeTextures[1] = SOIL_load_OGL_texture("img/carbon.png",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
     ListeTextures[2] = SOIL_load_OGL_texture("img/darkgrass.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y);
     ListeTextures[3] = SOIL_load_OGL_texture("img/darkwoodplanks.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y);
     ListeTextures[4] = SOIL_load_OGL_texture("img/darkwoodtiles.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y);
@@ -35,7 +35,9 @@ void Dalek::LoadTextures()
     ListeTextures[18] = SOIL_load_OGL_texture("img/metalgate.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y);
     //ListeTextures[19] = SOIL_load_OGL_texture("img/betonurban.bmp",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y);
     ListeTextures[19] = SOIL_load_OGL_texture("img/terre.jpg",SOIL_LOAD_AUTO,SOIL_CREATE_NEW_ID,SOIL_FLAG_INVERT_Y);
+
 }
+
 
 Dalek::Dalek()
 {
@@ -67,9 +69,21 @@ Dalek::Dalek()
 
 Dalek::Draw()
 {
-
     glEnable(GL_TEXTURE_2D);
 
+
+
+// Couleurs sur le dalek sans les bras mais pas bon
+//
+//        glEnable(GL_TEXTURE_2D);
+//        glColor3f(1.0f, 1.0f, 1.0f);
+//        glBindTexture(GL_TEXTURE_2D, ListeTextures[1]);
+//        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+//        glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+
+// Textures du bras
 
     glPushMatrix();
     glTranslatef(moveForward,exte*10,moveSide);
@@ -85,26 +99,26 @@ Dalek::Draw()
                 glTranslatef(0,0,extend);
                 glEnable(GL_TEXTURE_GEN_S); //enable texture coordinate generation
                 glEnable(GL_TEXTURE_GEN_T);
+                glBindTexture(GL_TEXTURE_2D,ListeTextures[1]);
+                glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S, GL_REPEAT);
+                glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T, GL_REPEAT);
+                glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+                glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
                 glutSolidTorus(j/2,j,10,10);
                 glDisable(GL_TEXTURE_GEN_S); //disable texture coordinate generation
                 glDisable(GL_TEXTURE_GEN_T);
-                glutSolidTorus(j/2,j,10,10);
-
                 j=j-0.05;
-                glBindTexture(GL_TEXTURE_2D, ListeTextures[1]);
-                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-                glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST);
-                glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
-
             }
 
-            glPushMatrix();
+               glPushMatrix();
+
+
+                GLUquadric* params = gluNewQuadric();
+                gluQuadricTexture(params,GL_TRUE);
                 glTranslatef(0,0,0.2);
                 glScalef(0.7,0.7,0.7);
-                glutSolidSphere(1,10,10);
+                gluSphere(params,1,100,100);
             glPopMatrix();
-        glPopMatrix();
 
         /**bras gauche**/
         glPushMatrix();
@@ -115,7 +129,12 @@ Dalek::Draw()
                 glScalef(longueur,0.1,0.1);
                 //glutSolidCube(2);
                 Block *brasG = new Block(1.0f, 2.0f, 2.0f);
-
+                brasG->SetTexture(FRONT, ListeTextures[1]);
+                brasG->SetTexture(BACK, ListeTextures[1]);
+                brasG->SetTexture(TOP, ListeTextures[1]);
+                brasG->SetTexture(BOT, ListeTextures[1]);
+                brasG->SetTexture(RIGHT, ListeTextures[1]);
+                brasG->SetTexture(LEFT, ListeTextures[1]);
                 brasG->DrawBras();
             glPopMatrix();
         glPopMatrix();
@@ -125,6 +144,12 @@ Dalek::Draw()
             glTranslatef(1,1.5,-0.5);
             glScalef(0.5,0.1,0.1);
             Block *brasD = new Block(1.0f, 2.0f, 2.0f);
+            brasD->SetTexture(FRONT, ListeTextures[1]);
+            brasD->SetTexture(BACK, ListeTextures[1]);
+            brasD->SetTexture(TOP, ListeTextures[1]);
+            brasD->SetTexture(BOT, ListeTextures[1]);
+            brasD->SetTexture(RIGHT, ListeTextures[1]);
+            brasD->SetTexture(LEFT, ListeTextures[1]);
             brasD->DrawBras();
         glPopMatrix();
 

@@ -167,10 +167,10 @@ void KeyboardDown(unsigned char key, int xx, int yy)
         cam->deltaStrafe = 1;
         dalek->moveDalekSide = 1;
         break;
-    case 'f':
+    case 'a':
         dalek->bras=2;
         break;
-    case 'h':
+    case 'e':
         dalek->bras =1;
         break;
     case ' ':
@@ -209,12 +209,12 @@ void KeyboardUp(unsigned char key, int xx, int yy)
     case 'r':
         dalek->angleval =0;
         break;
-    case 'a':
-    case 'e':
+    case 'w':
+    case 'x':
         dalek->longueurval =0;
         break;
-    case 'f':
-    case 'h':
+    case 'a':
+    case 'e':
         dalek->bras = 0;
         break;
     case ' ':

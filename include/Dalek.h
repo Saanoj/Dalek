@@ -4,7 +4,7 @@
 #include <GL/glu.h>
 
 #include "glut.h"
-#define MOVE_SPEED 0.1f
+#define MOVE_SPEED 1f
 class Dalek
 {
     public:

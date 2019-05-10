@@ -29,7 +29,7 @@ void Dalek::SetTexture(int nb, GLuint texture)
 
 Dalek::Dalek()
 {
-    longueur = 1;
+    longueur = 17;
     longueur2 = 1;
     angle =90;
     angleval=0;
@@ -72,7 +72,7 @@ Dalek::Draw()
 
 
 
-        glTranslatef(moveForward,exte*10,moveSide);
+    glTranslatef(moveForward,exte*10,moveSide);
     glPushMatrix();
     glTranslatef(moveForward,exte*10,moveSide);
         //glTranslatef(10,-0.5,0);
@@ -81,8 +81,16 @@ Dalek::Draw()
             float j = 1;
             glRotatef(270,1,0,0);
             for(int i = 0; i<10;i++){
+
                 glTranslatef(0,0,extend);
+                glEnable(GL_TEXTURE_GEN_S); //enable texture coordinate generation
+                glEnable(GL_TEXTURE_GEN_T);
                 glutSolidTorus(j/2,j,10,10);
+                glDisable(GL_TEXTURE_GEN_S); //disable texture coordinate generation
+                glDisable(GL_TEXTURE_GEN_T);
+                //############"
+     //           glTranslatef(0,0,extend);
+       //         glutSolidTorus(j/2,j,10,10);
                 j=j-0.05;
             }
 
@@ -142,6 +150,7 @@ Dalek::Draw()
         glPopMatrix();
 
     glPopMatrix();
+
 
 
 }
@@ -211,7 +220,7 @@ Dalek::Update(){
         moveSide -= moveDalekSide * (dirx/cos(angle)) * MOVE_SPEED;
 */
         moveForward += moveDalek * dirx * MOVE_SPEED;
-        //moveSide += moveDalek * dirz * MOVE_SPEED;
+        moveSide += moveDalek * dirz * MOVE_SPEED;
         moveForward -= moveDalekSide * dirz * MOVE_SPEED;
         moveSide -= moveDalekSide * dirx * MOVE_SPEED;
 

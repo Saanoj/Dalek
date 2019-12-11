@@ -219,13 +219,6 @@ Dalek::Update(){
     }
     if (moveDalek || moveDalekSide)
     {
-/* ca fais crash le dalek reflechie jonas
-        moveForward += moveDalek * (dirx/cos(angle)) * MOVE_SPEED;
-        moveSide += moveDalek * (dirz/cos(angle)) * MOVE_SPEED;
-        moveForward += moveDalekSide * (dirz/cos(angle)) * MOVE_SPEED;
-        moveSide -= moveDalekSide * (dirx/cos(angle)) * MOVE_SPEED;
-
-*/
 
         moveForward -= moveDalek * dirx * MOVE_SPEED;
         moveSide += moveDalek * dirz * MOVE_SPEED;
